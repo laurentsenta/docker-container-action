@@ -24,6 +24,6 @@ runs:
           echo "action_ref=$(echo ${ACTION_PATH#*/_actions/} | cut -d/ -f3)" >> $GITHUB_OUTPUT
         else
           echo "action_repository=$GITHUB_REPOSITORY" >> $GITHUB_OUTPUT
-          echo "action_ref=$GITHUB_REF" >> $GITHUB_OUTPUT
+          echo "action_ref=$GITHUB_SHA" >> $GITHUB_OUTPUT
         fi
       shell: bash

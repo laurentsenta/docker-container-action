@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [1.1.6] - 2023-08-04
+### Fixed
+- Return sha again when running .github/actions/github action to help with reproducibility
+- Do not use Docker BuildKit which breaks when cloning references
+
 ## [1.1.5] - 2023-08-04
 ### Fixed
 - Return ref instead of sha when running .github/actions/github action directly from the checkout
