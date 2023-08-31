@@ -114,12 +114,17 @@ runs:
         docker_run
         EXIT_CODE=$?
 
+        echo "exit-code=$EXIT_CODE"
+        echo "allow-all=$ALLOW_ALL"
+        echo "exit-codes=${EXIT_CODES[@]}"
+
         if [[ $ALLOW_ALL -eq 0 ]]; then
           echo "Allowing exit code $EXIT_CODE"
           exit 0
         fi
 
         for ALLOWED_EXIT_CODE in "${EXIT_CODES[@]}"; do
+          echo "Checking if $EXIT_CODE is equal to $ALLOWED_EXIT_CODE"
           if [[ $EXIT_CODE -eq $ALLOWED_EXIT_CODE ]]; then
             echo "Allowing exit code $EXIT_CODE"
             exit 0
