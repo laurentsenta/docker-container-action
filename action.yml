@@ -125,7 +125,7 @@ runs:
 
         for ALLOWED_EXIT_CODE in "${EXIT_CODES[@]}"; do
           echo "Checking if $EXIT_CODE is equal to $ALLOWED_EXIT_CODE"
-          if [[ $EXIT_CODE -eq $ALLOWED_EXIT_CODE ]]; then
+          if [[ "$EXIT_CODE" -eq "$ALLOWED_EXIT_CODE" ]]; then
             echo "Allowing exit code $EXIT_CODE"
             exit 0
           fi
